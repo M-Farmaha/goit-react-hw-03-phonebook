@@ -2,7 +2,6 @@ import { Component } from 'react';
 import { ContactForm } from './ContactForm';
 import { Filter } from './Filter';
 import { ContactList } from './ContactList';
-import { ContactItem } from './ContactItem';
 import * as Styled from './styled';
 
 export class App extends Component {
@@ -41,9 +40,7 @@ export class App extends Component {
         <ContactForm submit={handleContactFormSubmit} state={state} />
         <Styled.ContactTitle>Contacts</Styled.ContactTitle>
         <Filter filter={handleFilter} />
-        <ContactList state={state}>
-          <ContactItem delete={handleDelete} />
-        </ContactList>
+        <ContactList state={state} delete={handleDelete} />
       </Styled.Section>
     );
   }

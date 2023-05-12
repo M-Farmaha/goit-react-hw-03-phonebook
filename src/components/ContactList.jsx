@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Component } from 'react';
+import { ContactItem } from './ContactItem';
 
 import * as Styled from './styled';
 
 export class ContactList extends Component {
   render() {
-    const { state, children } = this.props;
+    const { state } = this.props;
 
     const lowerCaseFilter = state.filter.toLowerCase();
     const visibleContacts = state.contacts.filter(contact =>
@@ -16,12 +17,7 @@ export class ContactList extends Component {
     return (
       <Styled.ContactList>
         {visibleContacts.map(contact => {
-          return React.cloneElement(children, {
-            key: contact.id,
-            name: contact.name,
-            number: contact.number,
-            id: contact.id,
-          });
+          return <ContactItem key={contact.id} {...contact} {...this.props} />;
         })}
       </Styled.ContactList>
     );
