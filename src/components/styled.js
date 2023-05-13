@@ -61,11 +61,14 @@ export const Button = styled.button`
 `;
 
 export const DeleteButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #ffffff;
   background-color: #aeaeae;
   border-radius: 5px;
   border: none;
-  padding: 8px;
+  padding: 6px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &:hover,
@@ -99,7 +102,7 @@ export const ContactList = styled.ul`
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  width: 400px;
+  width: 360px;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
@@ -113,7 +116,7 @@ export const ContactItem = styled.li`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 20px;
+  padding: 10px 10px;
 
   &:nth-child(even) {
     background-color: #e8f8ff;
