@@ -29,6 +29,7 @@ export class ContactList extends Component {
 }
 
 ContactList.propTypes = {
+  delete: PropTypes.func.isRequired,
   state: PropTypes.shape({
     contacts: PropTypes.arrayOf(
       PropTypes.objectOf(PropTypes.string.isRequired)

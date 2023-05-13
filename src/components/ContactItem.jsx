@@ -24,4 +24,7 @@ export class ContactItem extends Component {
 
 ContactItem.propTypes = {
   delete: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };
