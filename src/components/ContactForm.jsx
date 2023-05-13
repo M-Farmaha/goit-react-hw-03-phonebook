@@ -9,6 +9,27 @@ export class ContactForm extends Component {
     number: '',
   };
 
+  componentDidMount() {
+    const name = localStorage.getItem('NAME');
+    const number = localStorage.getItem('NUMBER');
+
+    if (name) {
+      this.setState({ name });
+    }
+    if (number) {
+      this.setState({ number });
+    }
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.state.name !== prevState.name) {
+      localStorage.setItem('NAME', this.state.name);
+    }
+    if (this.state.number !== prevState.number) {
+      localStorage.setItem('NUMBER', this.state.number);
+    }
+  };
+
   handleChange = e => {
     const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
@@ -46,7 +67,7 @@ export class ContactForm extends Component {
           value={state.name}
           onChange={handleChange}
           id={inputNameId}
-          pattern="[\p{L} '-]+"
+          pattern="^(?=.{1,20}$)[\p{L} '-]+$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
@@ -57,7 +78,7 @@ export class ContactForm extends Component {
           value={state.number}
           onChange={handleChange}
           id={inputNumberId}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          pattern="\+?\d{1,3}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,6}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />

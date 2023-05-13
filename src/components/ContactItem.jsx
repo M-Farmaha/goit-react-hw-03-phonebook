@@ -14,9 +14,9 @@ export class ContactItem extends Component {
       <Styled.ContactItem>
         <Styled.ContactName>{name}: </Styled.ContactName>
         <Styled.ContactNumber>{number}</Styled.ContactNumber>
-        <Styled.Button type="button" id={id} onClick={this.handleDelete}>
-          Delete
-        </Styled.Button>
+        <Styled.DeleteButton type="button" id={id} onClick={this.handleDelete}>
+          <Styled.DeleteIcon />
+        </Styled.DeleteButton>
       </Styled.ContactItem>
     );
   }

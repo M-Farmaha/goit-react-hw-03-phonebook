@@ -15,11 +15,15 @@ export class ContactList extends Component {
     );
 
     return (
-      <Styled.ContactList>
-        {visibleContacts.map(contact => {
-          return <ContactItem key={contact.id} {...contact} {...this.props} />;
-        })}
-      </Styled.ContactList>
+      visibleContacts.length !== 0 && (
+        <Styled.ContactList>
+          {visibleContacts.map(contact => {
+            return (
+              <ContactItem key={contact.id} {...contact} {...this.props} />
+            );
+          })}
+        </Styled.ContactList>
+      )
     );
   }
 }

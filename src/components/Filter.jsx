@@ -12,7 +12,12 @@ export class Filter extends Component {
     return (
       <>
         <Styled.ContactFeature>Find contacts by name</Styled.ContactFeature>
-        <Styled.Input type="text" name="filter" onChange={this.handleChange} />
+        <Styled.Input
+          type="text"
+          name="filter"
+          value={this.props.value}
+          onChange={this.handleChange}
+        />
       </>
     );
   }

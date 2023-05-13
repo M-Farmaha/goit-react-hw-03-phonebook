@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+import { MdDelete } from 'react-icons/md';
 
 export const Section = styled.div`
   text-align: center;
   color: #000000;
   padding: 20px;
+  padding-bottom: 50px;
 `;
 
 export const PhonebookTitle = styled.h1`
@@ -45,7 +47,7 @@ export const Button = styled.button`
   background-color: rgb(87, 88, 134);
   border-radius: 5px;
   border: none;
-  padding: 6px 20px;
+  padding: 8px 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &:hover,
@@ -58,10 +60,33 @@ export const Button = styled.button`
   }
 `;
 
+export const DeleteButton = styled.button`
+  color: #ffffff;
+  background-color: #aeaeae;
+  border-radius: 5px;
+  border: none;
+  padding: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  &:hover,
+  &:focus {
+    background-color: #ff0048;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 250ms linear;
+    box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+  }
+`;
+
+export const DeleteIcon = styled(MdDelete)`
+  width: 20px;
+  height: 20px;
+`;
+
 export const ContactTitle = styled.h2`
-  font-size: 30px;
-  color: rgb(90, 134, 87);
-  margin-bottom: 20px;
+  font-size: 36px;
+  color: rgb(87, 88, 134);
+  margin-bottom: 10px;
 `;
 
 export const ContactFeature = styled.h3`
@@ -73,36 +98,43 @@ export const ContactFeature = styled.h3`
 export const ContactList = styled.ul`
   margin-left: auto;
   margin-right: auto;
-  width: 360px;
+  border-radius: 10px;
+  width: 400px;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  overflow: hidden;
+
+  background-color: #ffffff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 export const ContactItem = styled.li`
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+
+  &:nth-child(even) {
+    background-color: #e8f8ff;
+  }
 `;
 
 export const ContactName = styled.span`
-  width: 140px;
+  width: 100px;
   display: block;
   margin-right: auto;
   font-size: 14px;
   font-weight: 400;
   color: rgb(87, 88, 134);
   text-align: left;
-  overflow-wrap: break-word;
 `;
 
 export const ContactNumber = styled.span`
   width: 120px;
   margin-right: auto;
   font-size: 14px;
-  font-weight: 400;
-  color: rgb(90, 134, 87);
+  font-weight: 700;
+  color: rgb(87, 88, 134);
   text-align: left;
-  overflow-wrap: break-word;
 `;
